@@ -12,14 +12,6 @@ const oktaJwtVerifier = new OktaJwtVerifier({
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
-
-app.get('/v2/RentenKalkulation', (req, res) => {
-    console.log(req.header);
-});
-
 app.post('/v2/RentenKalkulation', (req, res) => {
     console.log(req);
     TokenArray = req.headers.authorization.split(" ");
@@ -35,8 +27,10 @@ app.post('/v2/RentenKalkulation', (req, res) => {
     })
         .catch(err => {
           console.warn('token failed validation');
+          res.json({
+            error: "invalid request"
+          });
     });
-
 });
 
 function getRandomIntRente(min, max) {
