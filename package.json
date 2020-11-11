@@ -1,0 +1,29 @@
+{
+  "name": "test-api-impl-auth-nodejs",
+  "version": "1.0.0",
+  "description": "Test Backend Implementation for FRIDA with NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "dev": "NODE_ENV=development nodemon app.js --watch server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FRIDA-official/test-api-impl-auth-nodejs.git"
+  },
+  "keywords": [
+    "FRIDA"
+  ],
+  "author": "Waldemar Rosenfeld <waldemar.rosenfeld@okta.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FRIDA-official/test-api-impl-auth-nodejs/issues"
+  },
+  "homepage": "https://github.com/FRIDA-official/test-api-impl-auth-nodejs#readme",
+  "dependencies": {
+    "@okta/jwt-verifier": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
