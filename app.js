@@ -32,7 +32,7 @@ app.post('/v2/RentenKalkulation', (req, res) => {
             });
       });
     }else {
-      res.json({
+      res.status(403).json({
         error: "invalid request"
       });
     }
