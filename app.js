@@ -19,7 +19,7 @@ app.post('/v2/RentenKalkulation', (req, res) => {
       .then(jwt => {
           res.json({
             summe: {
-              betrag: getRandomRente(100,2000),
+              betrag: getRandomIntRente(100,2000),
               'währung': "EUR"
             },
             timestamp: Date.now()
@@ -27,7 +27,7 @@ app.post('/v2/RentenKalkulation', (req, res) => {
       })
           .catch(err => {
             console.warn('token failed validation');
-            res.json({
+            res.status(403).json({
               error: "invalid request"
             });
       });
